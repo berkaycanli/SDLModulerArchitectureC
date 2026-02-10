@@ -28,8 +28,8 @@ bool engineInit(Engine* engine)
     }
 
     inputInit(&engine->input);
+    playerInit(&engine->player);
     renderInit(engine);
-
     return true;
 }
 

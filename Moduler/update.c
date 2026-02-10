@@ -1,12 +1,11 @@
 #include "update.h"
-#include <SDL2/SDL.h>
+#include "player.h"
 
 void updateGame(Engine* engine, float dt)
 {
-    (void)dt; // şimdilik kullanılmıyor
+    playerUpdate(&engine->player, &engine->input, dt);
 
-    // ESC ile çık
-    if (engine->input.keyboard[SDL_SCANCODE_ESCAPE])
+    if (engine->input.quit)
     {
         engine->running = false;
     }

@@ -5,11 +5,13 @@
 #include <stdbool.h>
 
 #include "input.h"
+#include "player.h"
 
 typedef struct Engine
 {
     SDL_Window* window;
     SDL_Renderer* renderer;
+    Player player;
     Input input;
     bool running;
 } Engine;

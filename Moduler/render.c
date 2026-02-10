@@ -1,4 +1,5 @@
 #include "render.h"
+#include "player.h"
 #include <SDL2/SDL.h>
 #include <stdio.h>
 
@@ -21,6 +22,10 @@ void renderDraw(Engine* engine, float dt)
 
     SDL_SetRenderDrawColor(engine->renderer, 0, 0, 0, 255);
     SDL_RenderClear(engine->renderer);
+
+    SDL_SetRenderDrawColor(engine->renderer, 255, 255, 255, 255);
+    playerDraw(&engine->player, engine->renderer);
+    
     SDL_RenderPresent(engine->renderer);
 }
 
