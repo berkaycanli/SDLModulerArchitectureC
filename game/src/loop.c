@@ -17,7 +17,7 @@ void initSDL(void)
     }
 
     window = SDL_CreateWindow(
-        "SDL2 Test",
+        "Solveritius Game Engine",
         SDL_WINDOWPOS_CENTERED,
         SDL_WINDOWPOS_CENTERED,
         800, 600,
@@ -58,7 +58,6 @@ void gameLoop(void)
         SDL_RenderClear(renderer);
         SDL_RenderPresent(renderer);
 
-        SDL_Delay(16); // ~60 FPS
     }
 }
 

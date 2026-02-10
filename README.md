@@ -1,12 +1,12 @@
-# SDLModulerArchitectureC
-moduler sdl yapısı baslangıcı C dilinde
+# Solveritius Game Engine
+Game Engine Core with SDL2 in C
 
 MSYS2 ve UCRT64 Terminali için (SDL kütüphanesi UCRT64 içinde kurulmuş varsayyıyorum)
 
-cd /c/Users/Berkay/Documents/MyProjects/C/Moduler
+cd /c/Users/Berkay/Documents/MyProjects/C/game
 
-gcc main.c loop.c -o game.exe -lmingw32 -lSDL2main -lSDL2
+gcc src/*.c -Iinclude -o game.exe -lmingw32 -lSDL2main -lSDL2
 
 ./game.exe
 
-V2.2
+V1.0
