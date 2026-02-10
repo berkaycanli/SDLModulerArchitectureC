@@ -9,4 +9,4 @@ gcc main.c loop.c -o game.exe -lmingw32 -lSDL2main -lSDL2
 
 ./game.exe
 
-V2.1
+V2.2
