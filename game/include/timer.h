@@ -1,7 +1,10 @@
 #ifndef TIMER_H
 #define TIMER_H
 
-// Saniye cinsinden çalışma süresini döndürür
-float timerGetSeconds(void);
+void timerInit(void);
+void timerUpdate(void);
+float timerGetDelta(void);
+void timerSync(int targetFPS);
+float timerGetTotalSeconds(void);
 
 #endif

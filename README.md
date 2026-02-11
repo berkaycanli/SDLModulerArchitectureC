@@ -9,4 +9,4 @@ gcc src/*.c -Iinclude -o game.exe -lmingw32 -lSDL2main -lSDL2
 
 ./game.exe
 
-V1.0
+V1.1

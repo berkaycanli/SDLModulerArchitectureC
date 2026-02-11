@@ -1,8 +1,6 @@
 #include "render.h"
 #include <SDL2/SDL.h>
-#include <stdio.h>
 
-// Private (Gizli) değişkenler
 static SDL_Window* window = NULL;
 static SDL_Renderer* renderer = NULL;
 
@@ -18,15 +16,18 @@ bool renderInit(const char* title, int width, int height) {
     return true;
 }
 
-void renderDraw(Player* p) {
+void renderBegin(void) {
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
+}
 
-    // Çizim işlemi
-    SDL_Rect rect = { (int)p->x, (int)p->y, (int)p->rect.w, (int)p->rect.h };
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+void renderDrawRect(float x, float y, float w, float h, int r, int g, int b, int a) {
+    SDL_Rect rect = { (int)x, (int)y, (int)w, (int)h };
+    SDL_SetRenderDrawColor(renderer, r, g, b, a);
     SDL_RenderFillRect(renderer, &rect);
+}
 
+void renderEnd(void) {
     SDL_RenderPresent(renderer);
 }
 

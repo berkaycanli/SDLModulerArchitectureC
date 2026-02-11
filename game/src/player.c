@@ -1,31 +1,26 @@
 #include "player.h"
+#include "config.h"
 
-void playerInit(Player* player)
-{
-    player->x = 400.0f;
-    player->y = 300.0f;
+void playerInit(Player* player) {
+    player->x = (float)SCREEN_WIDTH / 2 - 25;
+    player->y = (float)SCREEN_HEIGHT / 2 - 25;
     player->speed = 300.0f;
-
     player->rect.w = 50;
     player->rect.h = 50;
 }
 
-void playerUpdate(Player* p,  Input* input, float dt)
-{
-    // 1. Önce yeni pozisyonu hesapla
+void playerUpdate(Player* p, Input* input, float dt) {
     float nextX = p->x + (input->moveX * p->speed * dt);
     float nextY = p->y + (input->moveY * p->speed * dt);
 
-    // 2. Ekran sınırları için basit çarpışma kontrolü (Örn: 800x600 pencere)
-    // Bu, "collisionCheck" fonksiyonumuzun en temel mantığıdır.
-    if (nextX >= 0 && nextX <= (800 - p->rect.w)) {
+    if (nextX >= 0 && nextX <= (SCREEN_WIDTH - p->rect.w)) {
         p->x = nextX;
     }
-    if (nextY >= 0 && nextY <= (600 - p->rect.h)) {
+    if (nextY >= 0 && nextY <= (SCREEN_HEIGHT - p->rect.h)) {
         p->y = nextY;
     }
 
-    p->rect.x = (int)p->x;
-    p->rect.y = (int)p->y;
+    p->rect.x = p->x;
+    p->rect.y = p->y;
 }
 

@@ -5,7 +5,7 @@
 #include "input.h"
 #include "player.h"
 
-typedef struct Engine {
+typedef struct {
     Player player;
     Input input;
     bool running;

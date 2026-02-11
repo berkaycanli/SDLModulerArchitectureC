@@ -1,22 +1,16 @@
 #ifndef INPUT_H
 #define INPUT_H
 
-#include <SDL2/SDL.h>
 #include <stdbool.h>
 
-typedef struct
-{
+typedef struct {
     bool quit;
-
-    int moveX;   // -1, 0, 1
-    int moveY;   // -1, 0, 1
-
-    bool action; // space / fire vs.
+    int moveX;
+    int moveY;
+    bool action;
 } Input;
-
 
 void inputInit(Input* input);
 void inputUpdate(Input* input);
-void inputClear(Input* input);
 
 #endif

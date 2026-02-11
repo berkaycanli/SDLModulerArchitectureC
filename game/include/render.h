@@ -1,14 +1,12 @@
 #ifndef RENDER_H
 #define RENDER_H
 
-#include "player.h"
+#include <stdbool.h>
 
-// Motor başlatılırken pencereyi de burada açacağız
 bool renderInit(const char* title, int width, int height);
-
-// Sadece ihtiyaç duyduğumuz veriyi (Player) gönderiyoruz
-void renderDraw(Player* p);
-
+void renderBegin(void);
+void renderDrawRect(float x, float y, float w, float h, int r, int g, int b, int a);
+void renderEnd(void);
 void renderQuit(void);
 
 #endif
